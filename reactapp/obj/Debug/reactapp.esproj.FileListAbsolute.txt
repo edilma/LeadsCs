@@ -1,0 +1,4 @@
+C:\Users\edilm\OneDrive\Desktop\Code\2023\CSharp\leadsCS\LeadsCs\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\edilm\OneDrive\Desktop\Code\2023\CSharp\leadsCS\LeadsCs\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache

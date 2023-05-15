@@ -1,0 +1,37 @@
+.button-buyer-page{
+    display: flex;
+    justify-content: center;
+}
+.leads-button {
+    border: none;
+    
+}
+
+.allButton{
+    background-color: #e1e2e3;
+}
+.remoteButton{
+background-color: #00fbff;
+}
+.localButton{
+background-color: ffee00;
+}
+
+.hero-image{
+    background-color:#F3E20D ;
+    align-items: ri;
+}
+
+.loginBox{
+    padding-top: 1rem;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: center;
+background-color: #dee2e6b0;
+}
+.login-title{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
