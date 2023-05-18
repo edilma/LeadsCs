@@ -1,27 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
+using webapi.DBLayer;
 using webapi.Models;
 
 namespace webapi.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class buyersController: ControllerBase
     {
 
+        //connect to the MongoDB database
+        private readonly MongoDbContext _context;
+
+        public buyersController(MongoDbContext context)
+        {
+            _context = context;
+        }
+
+
         //Get all buyers from database   
         [HttpGet]
         public IEnumerable<Buyer> Get()
         {
-            return new List<Buyer>
-            {
-                new Buyer
-                {
-                    Id = 1,
-                    companyName = "Boca Code",
-                    contactName = "Joe Doe",
-                    email = ""
-                }
-            };
+            return _context.GetCollection<Buyer>("buyers").Find(buyer => true).ToList(); 
+            //return new List<Buyer>
+            //{
+            //    new Buyer
+            //    {
+            //        Id = 1,
+            //        companyName = "Boca Code",
+            //        contactName = "Joe Doe",
+            //        email = ""
+            //    }
+            //};
         }
 
         //Get buyer by id from the database
