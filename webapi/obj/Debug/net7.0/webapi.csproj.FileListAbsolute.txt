@@ -64,3 +64,16 @@ C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\obj\De
 C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\obj\Debug\net7.0\webapi.pdb
 C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\obj\Debug\net7.0\webapi.genruntimeconfig.cache
 C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\obj\Debug\net7.0\ref\webapi.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\AWSSDK.Core.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\DnsClient.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\MongoDB.Bson.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\MongoDB.Driver.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\MongoDB.Driver.Core.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\SharpCompress.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\Snappier.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\ZstdSharp.dll
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\edilm\OneDrive\Desktop\Coding\2023\CSharp\leadsCS\LeadsCs\webapi\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
