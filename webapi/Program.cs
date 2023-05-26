@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using webapi.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddControllers();
+// use a service serializer for Json
+builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+
+builder.Services.AddDbContext<LDSContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LDSsystem")));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -15,6 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 
