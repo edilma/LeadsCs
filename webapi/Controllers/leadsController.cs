@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using webapi.Models;
 using System.Collections.Generic;
-
+using webapi.Data;
 
 namespace webapi.Controllers
 {
@@ -9,57 +9,53 @@ namespace webapi.Controllers
     [ApiController]
     public class leadsController : ControllerBase
     {
+        private LDSContext dbContext;
+        
+        public leadsController(LDSContext _dbContext)
+        {
+            dbContext = _dbContext;
+
+        }
+
+
         //Get all leads from database   
         [HttpGet]
         public IEnumerable<Lead> Get()
         {
-            return new List<Lead>
-            {
-                new Lead
-                {
-                    Id = 1,
-                    first_name = "Joh55n",
-                    last_name = "Doe",
-                    email = ""
-                }
-            };
+
+           //get all leads from the database dbcontext and return them as a list of leads
+           List<Lead> theLeads = dbContext.Leads.ToList();
+            return theLeads;
+
         }
 
 
         //Get a lead by id from the database
         [HttpGet("{id}")]
-        public Lead GetLeadByLocation(int id)
+        public async Task<IResult> GetLeadByLocation(int id)
         {
-
-            return new Lead
+            Lead myLead =  dbContext.Leads.SingleOrDefault(x => x.Id == id);
+            if (myLead == null)
             {
-                Id = 1,
-                first_name = "John",
-                last_name = "Doe",
-                email = "",
-                learning_option = "remote"
-            };
+                return Results.NotFound();
+            }
+            else
+            {
+                return Results.Ok(myLead);
+            }
+
         }
 
-        //Create a new lead and post it to the database
-        //[HttpPost]
-        //public Boolean Post([FromBody] Lead lead)
-        //{
-
-        //   // Console.WriteLine(lead.city);
-        //    return true;
-
-        //}
 
         // create a new lead  
         [HttpPost]
         public async Task<IResult> Post([FromBody] Lead lead)
         {
             // use the "lead" variable to write to the database
-            //todo
-
-
-            return Results.Created("/Leads", new Response { Message = "Hello" });
+            dbContext.Leads.Add(lead);
+            dbContext.SaveChanges();
+          
+            return Results.Created("/Leads", new Response { Message = "Lead Added " });
         }
 
 
