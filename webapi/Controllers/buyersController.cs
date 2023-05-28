@@ -1,60 +1,55 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using webapi.Data;
 using webapi.Models;
 
 namespace webapi.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class buyersController: ControllerBase
     {
 
-        
+        private LDSContext dbContext;
+
+        public buyersController(LDSContext _dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
         //Get all buyers from database   
         [HttpGet]
         public IEnumerable<Buyer> Get()
         {
-
-
-            return new List<Buyer>
-            {
-                new Buyer
-                {
-                    Id = 1,
-                    companyName = "Boca Code",
-                    contactName = "Joe Doe",
-                    email = ""
-                }
-            };
+            List<Buyer> buyersList = dbContext.Buyers.ToList();
+            return buyersList;
+          
         }
 
         //Get buyer by id from the database
         [HttpGet("{id}")]
-        public Buyer GetBuyerById(int id)
+        public async Task<IResult> GetBuyerById(int id)
         {
-            return new Buyer
+            Buyer myBuyer = dbContext.Buyers.SingleOrDefault(x => x.Id == id);
+            if (myBuyer == null)
             {
-                Id = 1,
-                companyName = "Boca Code",
-                contactName = "Joe Doe",
-                email = "",
-                phone_number = "555-555-5555",
-                city = "Boca Raton",
-                zip = "33431"
-            };
+                return Results.NotFound();
+            }
+            else
+            {
+                return Results.Ok(myBuyer);
+            }
+            
         }
 
         // create a new buyer  
         [HttpPost]
-        public async Task<IResult> AddBuyer([FromBody] Lead lead)
+        public async Task<IResult> AddBuyer([FromBody] Buyer buyer)
         {
-            // use the "lead" variable to write to the database
-            //todo
+            dbContext.Buyers.Add(buyer);
+            dbContext.SaveChanges();
 
-
-            return Results.Created("/Buyer", new Response { Message = "Hello" });
+            return Results.Created("/Buyer", new Response { Message = "A buyer has been created" });
         }
 
 
