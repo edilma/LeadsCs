@@ -14,7 +14,7 @@ namespace webapi.Controllers
 
         public buyersController(LDSContext _dbContext)
         {
-            _dbContext = dbContext;
+            dbContext = _dbContext;
         }
 
         //Get all buyers from database   
@@ -25,6 +25,7 @@ namespace webapi.Controllers
             return buyersList;
           
         }
+
 
         //Get buyer by id from the database
         [HttpGet("{id}")]
