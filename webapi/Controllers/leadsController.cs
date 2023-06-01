@@ -28,6 +28,20 @@ namespace webapi.Controllers
             return theLeads;
 
         }
+        
+        //Get leads by learning option ning  from database
+
+        [HttpGet ("{learning_option}")]
+
+        public IEnumerable<Lead> GetLeadsByLearningOption(string learning_option)
+        {
+            //get all leads from the database dbcontext and return them as a list of leads
+            List<Lead> theLeads = dbContext.Leads.Where(x => x.learning_option == learning_option).ToList();
+            return theLeads;
+        }
+
+
+
 
 
         //Get a lead by id from the database
