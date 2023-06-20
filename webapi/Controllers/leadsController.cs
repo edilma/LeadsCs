@@ -31,7 +31,7 @@ namespace webapi.Controllers
         
         //Get leads by learning option ning  from database
 
-        [HttpGet ("{learning_option}")]
+        [HttpGet ("/ByOption/{learning_option}")]
 
         public IEnumerable<Lead> GetLeadsByLearningOption(string learning_option)
         {
