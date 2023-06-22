@@ -18,7 +18,8 @@ namespace webapi.Controllers
         }
 
 
-        //Get all leads from database   
+        //Get all leads from database
+        //app.get("/leads", await getAllLeads)
         [HttpGet]
         public IEnumerable<Lead> Get()
         {
@@ -29,36 +30,38 @@ namespace webapi.Controllers
 
         }
         
-        //Get leads by learning option ning  from database
+        //Get leads by location of the learning option (remote or in person) from database
+        [HttpGet ("{learning_option}")]
 
-        [HttpGet ("/ByOption/{learning_option}")]
-
-        public IEnumerable<Lead> GetLeadsByLearningOption(string learning_option)
+        public IEnumerable<Lead> getLeadsByLocation(string learning_option)
         {
             //get all leads from the database dbcontext and return them as a list of leads
             List<Lead> theLeads = dbContext.Leads.Where(x => x.learning_option == learning_option).ToList();
             return theLeads;
         }
 
+      
+
+
 
 
 
 
         //Get a lead by id from the database
-        [HttpGet("{id}")]
-        public async Task<IResult> GetLeadByLocation(int id)
-        {
-            Lead myLead =  dbContext.Leads.SingleOrDefault(x => x.Id == id);
-            if (myLead == null)
-            {
-                return Results.NotFound();
-            }
-            else
-            {
-                return Results.Ok(myLead);
-            }
+        //[HttpGet("{id}")]
+        //public async Task<IResult> GetLeadById(int id)
+        //{
+        //    Lead myLead =  dbContext.Leads.SingleOrDefault(x => x.Id == id);
+        //    if (myLead == null)
+        //    {
+        //        return Results.NotFound();
+        //    }
+        //    else
+        //    {
+        //        return Results.Ok(myLead);
+        //    }
 
-        }
+        //}
 
 
         // create a new lead  
